@@ -6,9 +6,8 @@ set :protection, except: :host
 set :server, :puma
 set :bind, '0.0.0.0' # Ensure the app listens on all network interfaces
 
-DEFAULT_AZURE_SCOPE = 'api://AzureADTokenExchange/.default'
-NULL_FILE = '/dev/null'
-
+DEFAULT_AZURE_SCOPE = 'api://AzureADTokenExchange/.default'.freeze
+NULL_FILE = File::NULL.freeze
 
 def azure_access_token
   client_id = ENV.fetch('AZURE_CLIENT_ID', nil)
@@ -24,7 +23,7 @@ def azure_access_token
     client_assertion: client_assertion
   }
 
-   HTTParty.get(azure_credentials_source, body: aad_token_request_body)
+  HTTParty.get(azure_credentials_source, body: aad_token_request_body)
 end
 
 get '/azure_access_token' do
@@ -37,6 +36,6 @@ get '/azure_access_token' do
     # Return only the token as plain text
     azure_token_response.parsed_response['access_token']
   else
-    halt 500, "Failed to get token"
+    halt 500, 'Failed to get token'
   end
 end

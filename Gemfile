@@ -4,14 +4,14 @@ source 'https://rubygems.org'
 
 ruby '3.4.6'
 
-gem 'sinatra'
-gem 'rackup'
-gem 'puma'   # For concurrent requests
 gem 'httpparty'
+gem 'puma' # For concurrent requests
+gem 'rackup'
+gem 'sinatra'
 
 group :test do
-  gem 'rspec'
   gem 'rack-test'
+  gem 'rspec'
   gem 'webmock'
 end
 
