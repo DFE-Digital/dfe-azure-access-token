@@ -14,3 +14,7 @@ group :test do
   gem 'rack-test'
   gem 'webmock'
 end
+
+group :development, :test do
+  gem 'rubocop', require: false
+end
