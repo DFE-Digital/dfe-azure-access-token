@@ -1,3 +1,6 @@
+plugins:
+  - rubocop-rspec
+
 Metrics/AbcSize:
   Enabled: false
 
@@ -45,3 +48,12 @@ AllCops:
     Enabled: true
     EnforcedStyle: gemspec
   NewCops: enable
+
+RSpec:
+  Enabled: true
+
+RSpec/DescribeClass:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
