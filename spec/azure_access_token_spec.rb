@@ -22,7 +22,7 @@ RSpec.describe 'Azure Access Token API' do
 
   context 'when Azure returns success' do
     before do
-      stub_request(:get, "https://login.microsoftonline.com/test-tenant-id/oauth2/v2.0/token")
+      stub_request(:get, 'https://login.microsoftonline.com/test-tenant-id/oauth2/v2.0/token')
         .with(body: hash_including(
           'grant_type' => 'client_credentials',
           'client_id' => 'test-client-id',
@@ -32,7 +32,7 @@ RSpec.describe 'Azure Access Token API' do
         ))
         .to_return(
           status: 200,
-          body: { "access_token" => "mocked-token" }.to_json,
+          body: { 'access_token' => 'mocked-token' }.to_json,
           headers: { 'Content-Type' => 'application/json' }
         )
     end
@@ -47,7 +47,7 @@ RSpec.describe 'Azure Access Token API' do
 
   context 'when Azure returns failure' do
     before do
-      stub_request(:get, "https://login.microsoftonline.com/test-tenant-id/oauth2/v2.0/token")
+      stub_request(:get, 'https://login.microsoftonline.com/test-tenant-id/oauth2/v2.0/token')
         .to_return(status: 500, body: 'Internal Server Error')
     end
 

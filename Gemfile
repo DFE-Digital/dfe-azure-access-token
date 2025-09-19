@@ -2,13 +2,20 @@
 
 source 'https://rubygems.org'
 
-gem 'sinatra'
-gem 'rackup'
-gem 'puma'   # For concurrent requests
+ruby '3.4.6'
+
 gem 'httpparty'
+gem 'puma' # For concurrent requests
+gem 'rackup'
+gem 'sinatra'
 
 group :test do
-  gem 'rspec'
   gem 'rack-test'
+  gem 'rspec'
   gem 'webmock'
+end
+
+group :development, :test do
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
 end

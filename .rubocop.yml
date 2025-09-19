@@ -1,0 +1,59 @@
+plugins:
+  - rubocop-rspec
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Layout/FirstHashElementIndentation:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+
+# Offense count: 2
+# This cop supports safe auto-correction (--auto-correct).
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
+# URISchemes: http, https
+Layout/LineLength:
+  Enabled: false
+
+Style/RedundantFetchBlock:
+  Enabled: false
+
+Style/EachWithObject:
+  Enabled: false
+
+AllCops:
+  TargetRubyVersion: 3.4
+  StyleGuide:
+    Enabled: true
+    EnforcedStyle: gemspec
+  NewCops: enable
+
+RSpec:
+  Enabled: true
+
+RSpec/DescribeClass:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false

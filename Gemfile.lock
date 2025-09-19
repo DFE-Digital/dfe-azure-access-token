@@ -3,30 +3,40 @@ GEM
   specs:
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    ast (2.4.3)
     base64 (0.3.0)
-    bigdecimal (3.1.9)
+    bigdecimal (3.2.3)
     crack (1.0.0)
       bigdecimal
       rexml
-    csv (3.3.3)
-    diff-lcs (1.6.1)
-    hashdiff (1.1.2)
-    httparty (0.23.0)
+    csv (3.3.5)
+    diff-lcs (1.6.2)
+    hashdiff (1.2.1)
+    httparty (0.23.1)
       csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
     httpparty (0.2.0)
       httparty (> 0)
+    json (2.14.1)
+    language_server-protocol (3.17.0.5)
+    lint_roller (1.1.0)
     logger (1.7.0)
     mini_mime (1.1.5)
-    multi_xml (0.7.1)
+    multi_xml (0.7.2)
       bigdecimal (~> 3.1)
-    mustermann (3.0.3)
+    mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.4)
-    public_suffix (6.0.1)
-    puma (6.6.0)
+    parallel (1.27.0)
+    parser (3.3.9.0)
+      ast (~> 2.4.1)
+      racc
+    prism (1.5.1)
+    public_suffix (6.0.2)
+    puma (7.0.3)
       nio4r (~> 2.0)
+    racc (1.8.1)
     rack (3.2.1)
     rack-protection (4.1.1)
       base64 (>= 0.1.0)
@@ -39,20 +49,40 @@ GEM
       rack (>= 1.3)
     rackup (2.2.1)
       rack (>= 3)
-    rexml (3.4.1)
-    rspec (3.13.0)
+    rainbow (3.1.1)
+    regexp_parser (2.11.3)
+    rexml (3.4.4)
+    rspec (3.13.1)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
       rspec-mocks (~> 3.13.0)
-    rspec-core (3.13.3)
+    rspec-core (3.13.5)
       rspec-support (~> 3.13.0)
-    rspec-expectations (3.13.3)
+    rspec-expectations (3.13.5)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-mocks (3.13.2)
+    rspec-mocks (3.13.5)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-support (3.13.2)
+    rspec-support (3.13.6)
+    rubocop (1.80.2)
+      json (~> 2.3)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.1.0)
+      parallel (~> 1.10)
+      parser (>= 3.3.0.2)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 2.9.3, < 3.0)
+      rubocop-ast (>= 1.46.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 4.0)
+    rubocop-ast (1.46.0)
+      parser (>= 3.3.7.2)
+      prism (~> 1.4)
+    rubocop-rspec (3.7.0)
+      lint_roller (~> 1.1)
+      rubocop (~> 1.72, >= 1.72.1)
+    ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     sinatra (4.1.1)
       logger (>= 1.6.0)
@@ -61,7 +91,10 @@ GEM
       rack-protection (= 4.1.1)
       rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
-    tilt (2.6.0)
+    tilt (2.6.1)
+    unicode-display_width (3.2.0)
+      unicode-emoji (~> 4.1)
+    unicode-emoji (4.1.0)
     webmock (3.25.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
@@ -69,7 +102,9 @@ GEM
 
 PLATFORMS
   arm64-darwin-24
-  ruby
+  x86_64-linux
+  x86_64-linux-gnu
+  x86_64-linux-musl
 
 DEPENDENCIES
   httpparty
@@ -77,8 +112,13 @@ DEPENDENCIES
   rack-test
   rackup
   rspec
+  rubocop
+  rubocop-rspec
   sinatra
   webmock
+
+RUBY VERSION
+   ruby 3.4.6p54
 
 BUNDLED WITH
    2.6.6
