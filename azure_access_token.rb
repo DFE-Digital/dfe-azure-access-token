@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'puma'
-require 'httpparty'
+require 'httparty'
 
 set :protection, except: :host
 set :server, :puma

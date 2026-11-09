@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 ruby '3.4.12'
 
-gem 'httpparty'
+gem 'httparty', '>= 0.24.3'
 gem 'puma' # For concurrent requests
 gem 'rackup'
 gem 'sinatra'
